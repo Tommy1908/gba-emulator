@@ -2,15 +2,14 @@
 
 #include <common.h>
 
-
 class cartridge
 {
   char title[13];
+  int rom_size;
   byte *rom;
-  
+
   public:
-    void hello_cartridge(char *rom_path);
+    cartridge(char *rom_path);
+    void hello_cartridge();
 };
 
-
-void hello_cartridge(char *rom_path);

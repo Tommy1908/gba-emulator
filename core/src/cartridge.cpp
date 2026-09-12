@@ -1,34 +1,33 @@
 #include <cartridge.h>
 
-void hello_cartridge(char *rom_path){
-
-  printf("Hola cartucho\n");
-
-  byte *rom;
-  int rom_size;
-  
-  FILE *rom_file = fopen(rom_path,"r");
+cartridge::cartridge(char *rom_path){
+  FILE *rom_file = fopen(rom_path, "r");
   if(rom_file == NULL){
     perror("Error opening rom");
-    return;
+    exit(EXIT_FAILURE);
   }
+
   printf("Rom Opened\n");
   
   // Get rom size
   fseek(rom_file,0,SEEK_END);
-  rom_size = ftell(rom_file); // final position
+
+  // final position
+  rom_size = ftell(rom_file);
   rewind(rom_file);
 
   rom = (byte*)malloc(rom_size);
   fread(rom,rom_size,1,rom_file);
   
-  // Print title
-  char title[13];
   int title_offset = 0x0A0;
   for(int i = 0; i<12; i++){
     title[i] = rom[title_offset+i];
   }
   title[12] = 0;
+}
 
+void cartridge::hello_cartridge(){
+  printf("Hola cartucho\n");
   printf("Game Title: %s\n", title);
 }
+

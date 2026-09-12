@@ -1,11 +1,6 @@
-#include <iostream>
-#include "cartridge.h"
+#include <emu.h>
 
 int main(int argc, char **argv){
-  printf("Hola mundo\n");
-  
-  char *rom_path = argv[1];
-  hello_cartridge(rom_path);
-  return 0;
+  return emu_run(argc, argv);
 }
 
