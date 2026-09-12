@@ -70,3 +70,6 @@ ilk.cache/
 
 # ROMS
 *.gba
+
+# Obsidian
+workspace.json
