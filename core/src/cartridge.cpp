@@ -1,13 +1,10 @@
 #include <cartridge.h>
-#include <stdint.h>
-#include <iostream>
-
 
 void hello_cartridge(char *rom_path){
 
   printf("Hola cartucho\n");
 
-  uint8_t *rom;
+  byte *rom;
   int rom_size;
   
   FILE *rom_file = fopen(rom_path,"r");
@@ -22,7 +19,7 @@ void hello_cartridge(char *rom_path){
   rom_size = ftell(rom_file); // final position
   rewind(rom_file);
 
-  rom = (uint8_t*)malloc(rom_size);
+  rom = (byte*)malloc(rom_size);
   fread(rom,rom_size,1,rom_file);
   
   // Print title

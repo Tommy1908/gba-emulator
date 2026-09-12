@@ -24,3 +24,4 @@ Tamaños posibles de cartuchos:
   0C6h    26    Not used         (seems to be unused)
   0E0h    4     JOYBUS Entry Pt. (32bit ARM branch opcode, eg. "B joy_start")
 ```
+
