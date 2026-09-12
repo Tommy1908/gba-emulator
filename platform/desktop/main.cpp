@@ -3,7 +3,9 @@
 
 int main(int argc, char **argv){
   printf("Hola mundo\n");
-  hello_cartridge();
+  
+  char *rom_path = argv[1];
+  hello_cartridge(rom_path);
   return 0;
 }
 
