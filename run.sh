@@ -12,7 +12,15 @@ FILE="$1"
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$PROJECT_DIR"
 
+mkdir -p build
+
 cd build
+
+if [ ! -f "Makefile" ]; then
+    echo "Makefile not found, running cmake..."
+    cmake ..
+fi
+
 make
 
 cd ..
