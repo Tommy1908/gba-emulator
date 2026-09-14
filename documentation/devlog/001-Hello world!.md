@@ -17,3 +17,7 @@ Game Title: TETRISWORLDS
 ```
 
 Por el mometo leimos toda la rom en un array de bytes
+
+Copiamos una estructura de proyecto que teniamos, donde tenemos el core, donde va a estar la logica, y platform, donde estarian los detalles de cada plataforma (desktop, android)
+
+Agregamos una clase para el cartucho, donde vamos a empezar a guardar algunos datos relevantes y crear algunas funciones de clase sencillas.
