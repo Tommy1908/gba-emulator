@@ -2,14 +2,18 @@
 
 #include <common.h>
 
-class cartridge
+class Cartridge
 {
-  char title[13];
   int rom_size;
   byte *rom;
 
+  // Header data
+  char title[13]; 
+  char game_code[5]; // 4 bytes + \0
+  bool rom_integrity; // False -> checksum didnt match (probably modified or corrupted) RUNS ANYWAY
+  
   public:
-    cartridge(char *rom_path);
+    Cartridge(char *rom_path);
     void hello_cartridge();
+    
 };
-
